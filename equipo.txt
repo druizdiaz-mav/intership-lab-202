@@ -1,2 +1,3 @@
 Escribir en la linea siguiente:
 Mateo: Aprendi la diferencia entre push y pull request, tambien lo que es un fork y una branch.
+Lisandro: Aprendi a resolver merge conflicts y a usar squash merge, ademas de trabajar en equipo para resolver un problema.
