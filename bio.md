@@ -1,3 +1,2 @@
-primer commit Luca Olivieri
-segundo commit Luca Olivieri
-tercer commit Luca Olivieri
+Biografía Luca Olivieri
+Estudiante de Ingeniería en Sistemas de Información trabajando en una pasantía en Renaiss. Actualmente practicando y aprendiendo sobre git y github.
