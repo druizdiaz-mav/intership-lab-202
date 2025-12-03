@@ -1,3 +1,4 @@
 Escribir en la linea siguiente:
 Mateo: Aprendi la diferencia entre push y pull request, tambien lo que es un fork y una branch.
 Lisandro: Aprendi a resolver merge conflicts y a usar squash merge, ademas de trabajar en equipo para resolver un problema.
+Federico: Aprendi que era un PR, el uso de git en VS y como implementar squash. me parecieron cosas importantes de aprender aunque seguramente todavia tengo que seguir practiando.
