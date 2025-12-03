@@ -1,1 +1,2 @@
 Biografía de Luca Olivieri
+Soy Luca Olvieri, tengo 22 años, nací el jueves 13 de noviembre de 2003 y soy Estudiante de Ingeniería en Sistemas de Información. Actualmente me encuentro finalizando mi tercer año en la facultad a la par que trabajo en una pasantía en la empresa Renaiss. También me encuentro trabajando en un proyecto de desarrollo de software para la facultad, en el que utilizamos typescript con react y vite para frontend, y typescript con nodejs y mikroORM para backend.
