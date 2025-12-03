@@ -1,2 +1,3 @@
 Biografía Luca Olivieri
-Estudiante de Ingeniería en Sistemas de Información trabajando en una pasantía en Renaiss. Actualmente practicando y aprendiendo sobre git y github.
+Soy Luca Olivieri, tengo 22 años y vivo en Rosario. 
+Actualmente me encuentro estudiando la carrera de Ingeniería en Sistemas de Información trabajando en una pasantía en Renaiss. Estoy practicando y aprendiendo sobre git y github. A la par de la pasantía me encuentro trabajando en un proyecto de desarrollo de software para la facultad, donde con mis compañeros y yo estamos construyendo un sistema de autogestión de consultorios profesionales y turnos, de tecnologia utilizamos typescript con vite y react para front y typescript con nodejs y mikroORM para back, nos queda agregarle un chatbot con IA, documentación y test automatizados.
