@@ -1,1 +1,8 @@
-Hola, soy Mateo, tengo 22 años y estoy estudiando la Tecnicatura en inteligencia artificial en la unr, estoy en el ultimo cuatrimestre, con 3 materias restantes, vivo en Pueblo Esther, un pueblito a 15km de rosario, Trabaje el ultimo año en una empresa de entrenamiento de IA llamada Scale.ai, mi trabajo se basaba en testear un modelo de lenguaje y mediante RHLF "enseñarle" lo que hizo mal.
+# Hola, soy Mateo 👋
+
+Tengo **22 años** y estoy estudiando la **Tecnicatura en Inteligencia Artificial** en la UNR.  
+Actualmente estoy en el **último cuatrimestre**, con **3 materias restantes**.
+
+Vivo en **Pueblo Esther**, un pueblito a 15 km de Rosario.
+
+El último año trabajé en una empresa de entrenamiento de IA llamada **Scale.ai**, donde mi trabajo se basaba en **testear un modelo de lenguaje** y, mediante **RLHF**, “enseñarle” lo que hizo mal para que mejorara su rendimiento.
