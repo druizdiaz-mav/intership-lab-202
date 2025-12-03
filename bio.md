@@ -12,3 +12,10 @@ Soy Lisandro Alarcon, me encanta programar, tocar el piano y aprender idiomas. E
   Tecnologias: C++
 - PSXE: Emulador de PlayStation 1
   Tecnologias: C, SDL2
+
+## Hobbies
+Mis hobbies son:
+- Programar
+- Aprender idiomas
+- Tocar piano, hacer música electrónica
+- Hacer caligrafía japonesa
