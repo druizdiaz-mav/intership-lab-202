@@ -1,3 +1,11 @@
+
+# Biografía de Federico
+Hola 
+Soy **Federico Barbarroja**, tengo 20 años y actualmente estoy estudiando la *Tecnicatura universitaria en IA*.
+Empece la pasantia en Renaiss el lunes 01/12 buscando empear a tener experiencia laboral en el mundo IT, por el momento todo bastante tranquilo y bien.
+Me gusta jugar al voley e ir al gimnasio, aunque cada vez tengo menos tiempo de hacer esas cosas que me ayudan a desestresar la mente.
+
+
 # Biografía de Luca Olivieri
 Soy Luca Olvieri, tengo 22 años, nací el 13 de noviembre de 2003 y soy Estudiante 
 de Ingeniería en Sistemas de Información. Actualmente me encuentro finalizando mi tercer año en 
@@ -26,3 +34,4 @@ Mis hobbies son:
 - Aprender idiomas
 - Tocar piano, hacer música electrónica
 - Hacer caligrafía japonesa
+
