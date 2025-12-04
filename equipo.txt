@@ -1,1 +1,2 @@
 Escribir en la linea siguiente:
+Lisandro: Aprendi a resolver merge conflicts y a usar squash merge, ademas de trabajar en equipo para resolver un problema.
