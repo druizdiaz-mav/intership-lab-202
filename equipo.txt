@@ -4,3 +4,4 @@ Federico: Aprendi que era un PR, el uso de git en VS y como implementar squash. 
 Luca: Sobre git aprendi que es una herramienta de versionado de codigo para proyectos de sofware, que nos permite crear ramas y enviar commits con los cambios. Github es una plataforma de alojamiento de repositorios que permite trabajar con git y resolver conflictos en actualizaciones en conjunto, llevando un registro de camios junto con quien los hizo.
 Lisandro: Aprendi a resolver merge conflicts y a usar squash merge, ademas de trabajar en equipo para resolver un problema.
 
+Lisandro: Aprendí a ejecutar containers de Docker, y a crear mis propias images con archivos propios usando un Dockerfile.
