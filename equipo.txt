@@ -1,1 +1,2 @@
 Escribir en la linea siguiente:
+Federico: Aprendi que era un PR, el uso de git en VS y como implementar squash. me parecieron cosas importantes de aprender aunque seguramente todavia tengo que seguir practiando.
