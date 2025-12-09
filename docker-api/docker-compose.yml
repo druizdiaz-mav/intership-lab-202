@@ -1,0 +1,9 @@
+services:
+  mi-api:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    ports:
+      - "8000:8000"
+
+#"docker-compose up --build" para buildear y correr el contenedor
