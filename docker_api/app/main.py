@@ -1,8 +1,5 @@
 from fastapi import FastAPI
-from fastapi.responses import PlainTextResponse
+from app.api.endpoints.hello_endpoint import router as hello_router
 
 app = FastAPI()
-
-@app.get("/hello", response_class=PlainTextResponse, status_code=200)
-def read_hello():
-    return "Hola"
+app.include_router(hello_router)
