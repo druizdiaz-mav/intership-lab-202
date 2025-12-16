@@ -1,0 +1,9 @@
+name: order-app
+
+services:
+  web:
+    build: .
+    container_name: order-app-web
+    ports:
+      - "8000:8000"
+    command: pytest
