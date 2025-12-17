@@ -2,7 +2,7 @@ from app.domain.customer import Customer
 from app.domain.item import Item
 
 class Order:
-    def __init__(self, customer_id: int, items: dict):
+    def __init__(self, customer_id: int):
         self.customer_id = customer_id
         self.items = dict()
 
