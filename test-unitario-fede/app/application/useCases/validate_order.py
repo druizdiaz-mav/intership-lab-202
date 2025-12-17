@@ -3,25 +3,18 @@ from app.domain.exceptions import ErrorValidacionOrden
 from app.application.interfaces.customer_repository_interface import RepositorioClienteInterface
 
 class ValidarOrdenUseCase:
-    def __init__(self, repositorio: RepositorioClienteInterface):
-        self.repositorio = repositorio
+    def __init__(self, ClienteRepositorio: RepositorioClienteInterface) -> None:
+        self.repositorio = ClienteRepositorio
 
     def ejecutar(self, orden: OrdenCompra):
         #La OC debe tener Items
         if not orden.productos:
             raise ErrorValidacionOrden("La orden debe tener al menos un producto.")
 
-        #alculo del monto total de la OC
+        #calculo del monto total de la OC
         total = 0.0
 
         for item in orden.productos:
-            # Cada item debe tener cantdad > a 0
-            if item.cantidad <= 0:
-                raise ErrorValidacionOrden(f"El producto {item.nombre} tiene cantidad inválida.")
-            
-            # Cada item debe tener precio > a 0
-            if item.precio <= 0:
-                raise ErrorValidacionOrden(f"El producto {item.nombre} tiene precio inválido.")
             
             total += item.cantidad * item.precio
 
