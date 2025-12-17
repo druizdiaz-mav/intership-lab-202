@@ -1,18 +1,17 @@
 from app.application.interfaces.customer_repository_interface import CustomerRepositoryInterface
-from app.domain.entities import Persona
+from app.domain.entities import Persona, EstadoPersona
 
 lista_personas = [
-    Persona("Luca", 1, "activo"),
-    Persona("Fede", 2, "inactivo"),
-    Persona("Mateo", 3, "activo"),
-    Persona("Licha", 4, "inactivo"),
+    Persona("Luca", 1, EstadoPersona.ACTIVO),
+    Persona("Fede", 2, EstadoPersona.INACTIVO),
+    Persona("Mateo", 3, EstadoPersona.ACTIVO),
+    Persona("Licha", 4, EstadoPersona.INACTIVO),
 ]
 
 class CustomerRepositoryInMemory(CustomerRepositoryInterface):
-    def is_active(self, customer_id: int) -> bool:
+    def get_by_id(self, id_cliente: int) -> Persona | None:
         for persona in lista_personas:
-            if persona.id == customer_id:
-                if persona.estado == "activo":
-                    return True
-        return False
+            if persona.id == id_cliente:
+                return persona
+        return None
 

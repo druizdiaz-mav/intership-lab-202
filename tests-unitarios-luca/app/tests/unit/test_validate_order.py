@@ -12,10 +12,10 @@ def use_case():
     repo_clientes = CustomerRepositoryInMemory()
     """
     lista_personas = [
-    Persona("Luca", 1, "activo"),
-    Persona("Fede", 2, "inactivo"),
-    Persona("Mateo", 3, "activo"),
-    Persona("Licha", 4, "inactivo"),
+    Persona("Luca", 1, EstadoPersona.ACTIVO),
+    Persona("Fede", 2, EstadoPersona.INACTIVO),
+    Persona("Mateo", 3, EstadoPersona.ACTIVO),
+    Persona("Licha", 4, EstadoPersona.INACTIVO),
     ]
     """
     repo_items = ItemRepositoryInMemory()
@@ -28,7 +28,7 @@ def use_case():
     """
     
     # Inyeccion de dependencias
-    return ValidateOrderUseCase(repo_clientes, repo_items)
+    return ValidateOrderUseCase(repo_clientes, repo_items, InvalidOrderException)
 
 def test_orden_valida_retorna_total(use_case):
     orden = Orden(1, [LineaDeOrden(1, 2)]) # 2 * 10.0 = 20.0
