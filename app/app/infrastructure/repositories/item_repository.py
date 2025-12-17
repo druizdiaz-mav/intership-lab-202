@@ -6,4 +6,10 @@ class MockItemRepository(ItemRepositoryInterface):
         if (item_id > 100):
             raise Exception("Item not found")
 
-        return Item(item_id=item_id, description=f"Mock Item {item_id}", price=item_id * 1.0)
+        item = Item(
+            item_id=item_id,
+            description=f"Mock Item {item_id}",
+            price=item_id * 1.0
+        )
+
+        return item
