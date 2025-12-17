@@ -1,0 +1,48 @@
+# --- Python Bytecode (Basura generada automáticamente) ---
+__pycache__/
+*.py[cod]
+*$py.class
+
+# --- Entornos Virtuales (Nunca se suben) ---
+venv/
+env/
+.venv/
+.env/
+
+# --- Variables de Entorno y Secretos (CRÍTICO) ---
+# Si subes esto, estás exponiendo tus credenciales.
+.env
+.env.local
+.env.*.local
+
+# --- Distribución y Empaquetado ---
+build/
+dist/
+develop-eggs/
+*.egg-info/
+.eggs/
+
+# --- Testing y Calidad de Código ---
+.pytest_cache/
+.coverage
+htmlcov/
+.mypy_cache/
+
+# --- Jupyter Notebooks (Si usas para tus cálculos de sistemas) ---
+.ipynb_checkpoints
+
+# --- Bases de Datos Locales (No subas tu DB de desarrollo) ---
+*.sqlite3
+*.db
+
+# --- Logs ---
+*.log
+
+# --- IDEs y Editores (Configuraciones locales tuyas) ---
+.vscode/
+.idea/
+*.swp
+
+# --- OS Junk ---
+.DS_Store
+Thumbs.db
