@@ -46,3 +46,7 @@ htmlcov/
 # --- OS Junk ---
 .DS_Store
 Thumbs.db
+
+# .env debe ser ignorado para proteger credenciales sensibles.
+
+.env
