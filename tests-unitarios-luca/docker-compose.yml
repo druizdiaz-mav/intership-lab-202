@@ -13,7 +13,7 @@ services:
       - "5432:5432"
     volumes:
       - postgres_data:/var/lib/postgresql/data # PERSISTENCIA donde se guardan los datos reales
-      - ./infrastructure/database/init:/docker-entrypoint-initdb.d # Scripts que corren al inicio
+      - ./app/infrastructure/database/init:/docker-entrypoint-initdb.d # Scripts que corren al inicio
     networks:
       - app_network
 
@@ -25,6 +25,7 @@ services:
     volumes:
     - .:/app
     environment:
+      PYTHONUNBUFFERED: 1
       # Conexión a la DB
       DB_HOST: db
       DB_NAME: ${DB_NAME}

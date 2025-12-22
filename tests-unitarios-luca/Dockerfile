@@ -22,4 +22,4 @@ COPY . .
 
 # Arranque
 # --reload se quita en producción.
-CMD ["uvicorn", "src.main:app", "--host", "0.0.0.0", "--port", "8000", "--reload"]
+CMD ["uvicorn", "app.api.main:app", "--host", "0.0.0.0", "--port", "8000", "--reload"]

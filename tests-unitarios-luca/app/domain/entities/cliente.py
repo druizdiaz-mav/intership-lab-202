@@ -1,7 +1,7 @@
 
 class Cliente:
-    def __init__(self,nombre: str, id_cliente: int, activo: bool):
-        self.id = id_cliente
+    def __init__(self,nombre: str, id: int, activo: bool):
+        self.id = id
         self.nombre = nombre
         self.activo = activo
 

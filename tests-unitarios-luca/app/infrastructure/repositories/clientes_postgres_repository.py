@@ -1,31 +1,38 @@
 from sqlalchemy.ext.asyncio import AsyncSession
-from sqlalchemy.future import select
-from domain.entities.cliente import Cliente
-from domain.repositories.cliente_repository import ClienteRepository
-from infrastructure.database.sqlalchemy.models import ClienteModel
+from sqlalchemy import select
+from app.infrastructure.database.sqlalchemy.models import ClienteModel
+from app.application.interfaces.cliente_repository_interface import ClienteRepositoryInterface
+from app.domain.entities.cliente import Cliente
 
 # Esta clase IMPLEMENTA el contrato del dominio usando SQLAlchemy
-class PostgresClienteRepository(ClienteRepository):
+class ClientePostgresRepository(ClienteRepositoryInterface):
     
     def __init__(self, db: AsyncSession):
         self.db = db
 
     async def save(self, cliente: Cliente) -> Cliente:
-        # 1. Convertir Dominio -> Modelo DB
+        #Convertir Dominio -> Modelo DB
         cliente_db = ClienteModel.from_domain(cliente)
         
-        # 2. Guardar en SQL
+        #Guardar en SQL
         self.db.add(cliente_db)
         await self.db.commit()
         await self.db.refresh(cliente_db)
         
-        # 3. Convertir Modelo DB -> Dominio y devolver
+        #Convertir Modelo DB -> Dominio y devolver
         return cliente_db.to_domain()
 
-    async def get_by_id(self, id: int) -> Cliente | None:
+    async def get_by_id(self, id: int):
+        # 2. USAS LA SESIÓN (self.db) PARA EJECUTAR SQL
+        query = select(ClienteModel).where(ClienteModel.id == id)
+        result = await self.db.execute(query)
+        return result.scalars().one_or_none()
+
+    async def delete(self, id: int) -> None:
         result = await self.db.execute(select(ClienteModel).where(ClienteModel.id == id))
-        cliente_db = result.scalars().first()
+        #Convierte las tuplas resultantes en instancias del modelo
+        cliente_db = result.scalars().one_or_none()
         
         if cliente_db:
-            return cliente_db.to_domain()
-        return None
+            await self.db.delete(cliente_db)
+            await self.db.commit()
