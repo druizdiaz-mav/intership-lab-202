@@ -4,8 +4,8 @@ from app.application.usecases.create_order import CreateOrderUseCase
 from app.application.usecases.order_add_item import OrderAddItemUseCase
 from app.application.usecases.order_remove_item import OrderRemoveItemUseCase
 from app.application.usecases.validate_order import ValidateOrderUseCase
-from app.infrastructure.repositories.customer_repository import MockCustomerRepository
-from app.infrastructure.repositories.item_repository import MockItemRepository
+from app.infrastructure.repositories.mock_customer_repository import MockCustomerRepository
+from app.infrastructure.repositories.mock_item_repository import MockItemRepository
 
 def test_validate_order_usecase():
     create_order_usecase = CreateOrderUseCase()

@@ -1,7 +1,7 @@
 import pytest
 
 from app.application.usecases.get_item_by_id import GetItemByIdUseCase
-from app.infrastructure.repositories.item_repository import MockItemRepository
+from app.infrastructure.repositories.mock_item_repository import MockItemRepository
 
 def test_get_item_by_id_usecase():
     item_repository = MockItemRepository()

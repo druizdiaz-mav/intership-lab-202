@@ -1,7 +1,7 @@
 import pytest
 
 from app.application.usecases.get_customer_by_id import GetCustomerByIdUseCase
-from app.infrastructure.repositories.customer_repository import MockCustomerRepository
+from app.infrastructure.repositories.mock_customer_repository import MockCustomerRepository
 
 def test_get_customer_by_id_usecase():
     customer_repository = MockCustomerRepository()

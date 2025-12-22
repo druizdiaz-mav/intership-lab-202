@@ -21,11 +21,15 @@ class ValidateOrderUseCase:
 
         total = 0.0
 
-        for item_id, qty in order.items.items():
+        for order_item in order.items:
+            item_id = order_item.item_id
+            qty = order_item.quantity
+
             item = self.item_repository.get_item_by_id(item_id)
             
             if (qty <= 0):
                 raise DomainException("The item quantity must be greater than zero")
+
             if (item.get_price() <= 0):
                 raise DomainException("The item price must be greater than zero")
 
