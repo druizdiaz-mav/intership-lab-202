@@ -1,10 +1,29 @@
-class Item:
-    def __init__(self, name, quantity, unit_price):
-        self.name = name
-        self.quantity = quantity
-        self.unit_price = unit_price
+from dataclasses import dataclass
+from datetime import datetime
+from typing import List
 
-class Order:
-    def __init__(self, customer_id, items):
-        self.customer_id = customer_id
-        self.items = items
+@dataclass
+class Producto:
+    id: int | None
+    nombre: str
+    precio: float
+
+@dataclass
+class Cliente:
+    id: int | None
+    nombre: str
+    activo: bool
+
+@dataclass
+class ItemOrden:
+    producto_id: int
+    cantidad: int
+    precio_unitario: float
+
+@dataclass
+class Orden:
+    id: int | None
+    cliente_id: int
+    fecha: datetime
+    total: float
+    items: List[ItemOrden]
