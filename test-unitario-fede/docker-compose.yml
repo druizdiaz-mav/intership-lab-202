@@ -1,0 +1,40 @@
+services:
+  db:
+    image: postgres:15-alpine
+    container_name: postgres_app_clean
+    environment:
+      POSTGRES_USER: usuario_app
+      POSTGRES_PASSWORD: password_segura
+      POSTGRES_DB: sistema_pedidos
+    ports:
+      - "5432:5432"
+    volumes:
+      - postgres_data:/var/lib/postgresql/data  #Se guardan los datos
+      - ./init_db:/docker-entrypoint-initdb.d  #Ejecuta el script de creación de tablas automáticamente al iniciar
+    networks:
+      - app-network
+
+  backend:
+    build: .  # Construimos usando el Dockerfile 
+    container_name: python_api_clean
+    ports:
+      - "8000:8000" # Mapeamos puerto 
+    depends_on:
+      - db 
+    environment:
+      DB_HOST: db
+      DB_PORT: 5432
+      DB_NAME: sistema_pedidos
+      DB_USER: usuario_app
+      DB_PASSWORD: password_segura
+    networks:
+      - app-network
+
+volumes:
+  postgres_data:
+
+networks:
+  app-network:
+    driver: bridge
+
+#docker-compose up -d

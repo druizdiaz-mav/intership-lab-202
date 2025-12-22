@@ -12,7 +12,7 @@ class ValidarOrdenUseCase:
             raise ErrorValidacionOrden("La orden debe tener al menos un producto.")
 
         #calculo del monto total de la OC
-        total = 0.0
+        total = orden.total
 
         for item in orden.productos:
             
