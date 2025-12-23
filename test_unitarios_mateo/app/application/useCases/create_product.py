@@ -8,7 +8,6 @@ class CreateProduct:
         self.repository = repository
 
     def execute(self, nombre: str, precio: float) -> Producto:
-        # Regla mínima de dominio (puede crecer)
         if precio <= 0:
             raise ValueError("El precio debe ser mayor a 0")
 

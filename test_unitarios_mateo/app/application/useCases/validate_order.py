@@ -1,4 +1,4 @@
-from app.domain.entities import Order
+from app.domain.entities import Orden
 from app.domain.exceptions import InvalidOrderException
 from app.application.interfaces.customer_repository_interface import CustomerRepositoryInterface
 
@@ -6,7 +6,7 @@ class ValidateOrderUseCase:
     def __init__(self, customer_repo: CustomerRepositoryInterface):
         self.customer_repo = customer_repo
 
-    def execute(self, order: Order) -> float:
+    def execute(self, order: Orden) -> float:
         if not order.items:
             raise InvalidOrderException("La orden debe contener al menos un ítem.")
 
