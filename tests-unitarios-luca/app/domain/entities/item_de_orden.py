@@ -1,5 +1,5 @@
 class ItemDeOrden:
-    def __init__(self, id_orden: int, id_producto: int, cantidad: int, precio_unitario: float = 0.0):
+    def __init__(self, id_producto: int, cantidad: int, precio_unitario: float = 0.0, id_orden: int = None):
         self.id_orden = id_orden
         self.id_producto = id_producto
         self.cantidad = cantidad

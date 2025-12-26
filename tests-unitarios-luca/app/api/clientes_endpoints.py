@@ -4,8 +4,9 @@ from app.domain.entities.cliente import Cliente
 from app.application.use_cases.get_cliente_uc import GetClienteUseCase
 from app.application.use_cases.save_cliente_uc import SaveClienteUseCase
 from app.application.use_cases.delete_cliente_uc import DeleteClienteUseCase
-from app.infrastructure.repositories.clientes_postgres_repository import ClientePostgresRepository 
+from app.infrastructure.repositories.cliente_postgres_repository import ClientePostgresRepository 
 from app.infrastructure.database.sqlalchemy.config import get_db 
+from app.domain.entities.exceptions import DomainException, EntityNotFound
 
 router = APIRouter()
 
@@ -40,6 +41,9 @@ async def get_cliente(
 
         return {"id": cliente.id, "nombre": cliente.nombre, "activo": cliente.activo}
 
+    except EntityNotFound as e:
+        raise HTTPException(status_code=404, detail=str(e))
+
     except Exception as e:
         raise HTTPException(status_code=500, detail=str(e))
 
@@ -53,6 +57,10 @@ async def create_cliente(
         cliente_guardado = await use_case.execute(nuevo_cliente)
 
         return {"id": cliente_guardado.id, "nombre": cliente_guardado.nombre, "activo": cliente_guardado.activo}
+
+    except DomainException as e:
+        raise HTTPException(status_code=400, detail=str(e))
+
     except Exception as e:
         raise HTTPException(status_code=500, detail=str(e))
 
@@ -64,5 +72,9 @@ async def delete_cliente(
     try:
         await use_case.execute(id)
         return {"detail": "Cliente eliminado correctamente"}
+    
+    except EntityNotFound as e:
+        raise HTTPException(status_code=404, detail=str(e))
+
     except Exception as e:
         raise HTTPException(status_code=500, detail=str(e))

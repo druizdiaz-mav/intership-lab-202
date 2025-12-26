@@ -5,8 +5,9 @@ from app.infrastructure.database.sqlalchemy.config import engine
 
 from app.api.clientes_endpoints import router as clientes_router
 from app.api.productos_endpoints import router as productos_router
+from app.api.orden_endpoints import router as orden_router
 
-# 3. LIFESPAN (GESTOR DE CICLO DE VIDA)
+# LIFESPAN (GESTOR DE CICLO DE VIDA)
 @asynccontextmanager
 async def lifespan(app: FastAPI):
     yield
@@ -21,6 +22,7 @@ app = FastAPI(
 
 app.include_router(clientes_router, prefix="/clientes", tags=["Clientes"])
 app.include_router(productos_router, prefix="/productos", tags=["Productos"])
+app.include_router(orden_router, prefix="/ordenes", tags=["Ordenes"])
 
 @app.get("/")
 async def root():

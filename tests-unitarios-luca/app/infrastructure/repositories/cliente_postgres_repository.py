@@ -23,16 +23,20 @@ class ClientePostgresRepository(ClienteRepositoryInterface):
         return cliente_db.to_domain()
 
     async def get_by_id(self, id: int):
-        # 2. USAS LA SESIÓN (self.db) PARA EJECUTAR SQL
         query = select(ClienteModel).where(ClienteModel.id == id)
         result = await self.db.execute(query)
         return result.scalars().one_or_none()
 
-    async def delete(self, id: int) -> None:
+    async def delete(self, id: int) -> bool:
         result = await self.db.execute(select(ClienteModel).where(ClienteModel.id == id))
         #Convierte las tuplas resultantes en instancias del modelo
         cliente_db = result.scalars().one_or_none()
         
+        # Si existe se borra y devuelve true
         if cliente_db:
             await self.db.delete(cliente_db)
             await self.db.commit()
+            return True
+            
+        # Si no existe devolvemos false
+        return False

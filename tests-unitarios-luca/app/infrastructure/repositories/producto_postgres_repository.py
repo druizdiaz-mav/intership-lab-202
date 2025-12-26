@@ -4,7 +4,7 @@ from app.infrastructure.database.sqlalchemy.models import ProductoModel
 from app.application.interfaces.producto_repository_interface import ProductoRepositoryInterface
 from app.domain.entities.producto import Producto
 
-class ProductosPostgresRepository(ProductoRepositoryInterface):
+class ProductoPostgresRepository(ProductoRepositoryInterface):
     def __init__(self, db: AsyncSession):
         self.db = db
 
@@ -25,11 +25,17 @@ class ProductosPostgresRepository(ProductoRepositoryInterface):
             return producto_model.to_domain()
         return None
 
-    async def delete(self, id: int) -> None:
+    async def delete(self, id: int) -> bool:
         result = await self.db.execute(
             select(ProductoModel).where(ProductoModel.id == id)
         )
         producto_model = result.scalar_one_or_none()
+
+        # Si existe devuelve true
         if producto_model:
             await self.db.delete(producto_model)
             await self.db.commit()
+            return True
+
+        #Si no existe devuelve false
+        return False
