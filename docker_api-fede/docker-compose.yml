@@ -1,0 +1,14 @@
+services:
+  api:
+    build: .
+    container_name: clean_arch_api
+    ports:
+      - "8000:8000"
+    # VOLUMENES:
+    # Cualquier cambio que guardes en VS Code se refleja al instante adentro.
+    volumes:
+      - ./app:/code/app
+    # Sobrescribimos el comando para agregar
+    command: uvicorn app.main:app --host 0.0.0.0 --port 8000 --reload
+
+#docker compose up --build  
